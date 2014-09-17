@@ -61,9 +61,9 @@ function del(request, response) {
 function put(request, response) {
 	console.log("PUT:: Re-generate new seesion_id for the same user");
 	// TODO: refresh session id; similar to the post() function
-	var name=request.body.name;
-	var email=request.body.email;
-	var newSessionId = login.login(name,email);
+	var myname=request.body.name;
+	var myemail=request.body.email;
+	var newSessionId = login.login(myname,myemail);
 	response.setHeader('Set-Cookie', 'session_id=' + newSessionId);
 	
 	response.end("Re-freshed session id\n");
